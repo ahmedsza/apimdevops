@@ -8,7 +8,8 @@ on:
   push:
     branches: [ dev ]
     paths: 
-    - 'contoso/**'
+    - 'ahmapim/**'
+  workflow_dispatch:
     #- '!servless-devops/**/README.md'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -19,11 +20,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      resourceGroup: apim-dev-contoso-rg
-      ApimServiceName: apims-dev-contoso
-      repoUrl: https://raw.githubusercontent.com/romerve/rvlabs-apim-devops
+      resourceGroup: apim-dev-ahmsapim-rg
+      ApimServiceName: apims-dev-ahmsapim
+      repoUrl: https://raw.githubusercontent.com/ahmedsza/apimdevops
       repoBranch: ${GITHUB_REF##*/}
-      repoApimPath: contoso
+      repoApimPath: ahmsapim
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -36,28 +37,28 @@ jobs:
       uses: Azure/login@v1
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-        creds: ${{ secrets.RVLABS_APIMS_CONTOSO }}
+        creds: ${{ secrets.AHMSAPIMSP }}
 
     # ARM deployment tasks  
     - name: Deploy APIM Service and APIs
-      working-directory: ./contoso
+      working-directory: ./ahmsapim
       env:
         LinkedTemplatesBaseUrl: ${{ env.repoUrl }}/${{ env.repoBranch }}/${{ env.repoApimPath }}
         PolicyXMLBaseUrl: ${{ env.repoUrl }}/${{ env.repoBranch }}/${{ env.repoApimPath }}/policies
         deploymentName: --name GH_dev_deployment_apim
         rg: --resource-group ${{ env.resourceGroup }}
-        apiNamePrefix: apim-contoso
+        apiNamePrefix: ahmsopenhack
       run: |
           az deployment group create ${{env.deploymentName}} ${{env.rg}} --template-file ./${{env.apiNamePrefix}}-master.template.json --parameters ./${{env.apiNamePrefix}}-parameters.json --parameters ApimServiceName=${{ env.ApimServiceName }} LinkedTemplatesBaseUrl=${{ env.LinkedTemplatesBaseUrl }} PolicyXMLBaseUrl=${{ env.PolicyXMLBaseUrl }}
 
     - name: Deploy APIs
-      working-directory: ./contoso
+      working-directory: ./ahmsapim
       env:
         LinkedTemplatesBaseUrl: ${{ env.repoUrl }}/${{ env.repoBranch }}/${{ env.repoApimPath }}
         PolicyXMLBaseUrl: ${{ env.repoUrl }}/${{ env.repoBranch }}/${{ env.repoApimPath }}
         deploymentName: --name GH_dev_deployment_api
         rg: --resource-group ${{ env.resourceGroup }}
-        apiNamePrefix: apim-contoso
+        apiNamePrefix: ahmsopenhack
       run: |
         echo $apiNamePrefix
         for f in *; do
