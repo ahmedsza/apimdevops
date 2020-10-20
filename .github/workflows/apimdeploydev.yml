@@ -23,7 +23,7 @@ jobs:
       resourceGroup: apim-dev-ahmsapim-rg
       ApimServiceName: apims-dev-ahmsapim
       repoUrl: https://raw.githubusercontent.com/ahmedsza/apimdevops
-      repoBranch: ${GITHUB_REF##*/}
+      repoBranch: ${GITHUB_REF}
       repoApimPath: ahmsapim
 
 
