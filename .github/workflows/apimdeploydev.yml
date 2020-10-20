@@ -49,7 +49,9 @@ jobs:
         rg: --resource-group ${{ env.resourceGroup }}
         apiNamePrefix: ahmsopenhack
       run: |
-          az deployment group create ${{env.deploymentName}} ${{env.rg}} --template-file ./${{env.apiNamePrefix}}-master.template.json --parameters ./${{env.apiNamePrefix}}-parameters.json --parameters ApimServiceName=${{ env.ApimServiceName }} LinkedTemplatesBaseUrl=${{ env.LinkedTemplatesBaseUrl }} PolicyXMLBaseUrl=${{ env.PolicyXMLBaseUrl }}
+          echo $LinkedTemplatesBaseUrl
+          echo $PolicyXMLBaseUrl
+          # az deployment group create ${{env.deploymentName}} ${{env.rg}} --template-file ./${{env.apiNamePrefix}}-master.template.json --parameters ./${{env.apiNamePrefix}}-parameters.json --parameters ApimServiceName=${{ env.ApimServiceName }} LinkedTemplatesBaseUrl=${{ env.LinkedTemplatesBaseUrl }} PolicyXMLBaseUrl=${{ env.PolicyXMLBaseUrl }}
 
     - name: Deploy APIs
       working-directory: ./ahmsapim
