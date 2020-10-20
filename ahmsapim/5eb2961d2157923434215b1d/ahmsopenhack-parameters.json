@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "value": "ahmsopenhack"
+    },
+    "LinkedTemplatesBaseUrl": {
+      "value": "https://raw.githubusercontent.com/ahmedsza/apimdevops/main/apim/ahmsapim"
+    },
+    "PolicyXMLBaseUrl": {
+      "value": "https://raw.githubusercontent.com/ahmedsza/apimdevops/main/apim/ahmsapim/policies"
+    },
+    "serviceUrl": {
+      "value": {
+        "Api5eb2961d2157923434215b1d": null
+      }
+    },
+    "NamedValues": {
+      "value": {
+        "Property5eb29cec36b4c51bf83c0c54": "qgOL9E7knii-wiqe3PNsUX98kfK9DTLLdZ9scPma0TY",
+        "ahmsohfunctionex1key": "qs47w5VLTvdwcgjlkSw4KYm/0OFZ2c6g6Z6LG0vEYCKkHiCErJWOUQ==",
+        "Property5eb182dd63b41812a46105cb": "3efae7db-49cd-444f-af65-17f168a0facd"
+      }
+    },
+    "ApiLoggerId": {
+      "value": {}
+    },
+    "LoggerResourceId": {
+      "value": {}
+    }
+  },
+  "resources": []
+}

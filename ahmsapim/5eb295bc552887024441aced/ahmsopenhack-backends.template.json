@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    },
+    "PolicyXMLBaseUrl": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "ahmsOHFunctionEx1",
+        "resourceId": "https://management.azure.com/subscriptions/1af37254-fd45-46ce-83b3-98926c1c772b/resourceGroups/ServerlessOpenHack/providers/Microsoft.Web/sites/ahmsOHFunctionEx1",
+        "credentials": {
+          "header": {
+            "x-functions-key": [
+              "{{ahmsohfunctionex1-key}}"
+            ]
+          }
+        },
+        "url": "https://ahmsohfunctionex1.azurewebsites.net/api",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ahmsohfunctionex1')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "description": "ahmsOHEx1LogicApp",
+        "resourceId": "https://management.azure.com/subscriptions/1af37254-fd45-46ce-83b3-98926c1c772b/resourceGroups/ServerlessOpenHack/providers/Microsoft.Logic/workflows/ahmsOHEx1LogicApp",
+        "url": "https://prod-07.southafricanorth.logic.azure.com/workflows/701f741a3b464c4b84e1eab000886e63/triggers",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/LogicApp_ahmsOHEx1LogicApp_ServerlessOpenHack_1af37254fd4546ce83b398926c1c772b')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2019-01-01"
+    }
+  ]
+}

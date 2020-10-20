@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    },
+    "PolicyXMLBaseUrl": {
+      "type": "string"
+    },
+    "NamedValues": {
+      "type": "object"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "tags": [],
+        "secret": true,
+        "displayName": "5eb2961d2157923434215b1d_5eb2962363fa1d4ba2fbe7a5_5eb29cec36b4c51bf83c0c54",
+        "value": "[parameters('NamedValues').Property5eb29cec36b4c51bf83c0c54]"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/5eb29cec36b4c51bf83c0c54')]",
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "tags": [
+          "key",
+          "function",
+          "auto"
+        ],
+        "secret": true,
+        "displayName": "ahmsohfunctionex1-key",
+        "value": "[parameters('NamedValues').ahmsohfunctionex1key]"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ahmsohfunctionex1-key')]",
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "secret": true,
+        "displayName": "Logger-Credentials-5eb182dd63b41812a46105cc",
+        "value": "[parameters('NamedValues').Property5eb182dd63b41812a46105cb]"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/5eb182dd63b41812a46105cb')]",
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01"
+    }
+  ]
+}

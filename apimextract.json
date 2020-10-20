@@ -1,0 +1,13 @@
+{
+    "sourceApimName": "ahmsopenhack",
+    "destinationApimName": "ahmsopenhack",
+    "resourceGroup": "ServerlessOpenHack",
+    "fileFolder": "./ahmsapim",
+    "linkedTemplatesBaseUrl": "https://raw.githubusercontent.com/ahmedsza/apimdevops/main/apim/ahmsapim",
+    "policyXMLBaseUrl": "https://raw.githubusercontent.com/ahmedsza/apimdevops/main/apim/ahmsapim/policies",
+    "splitAPIs": "true",
+    "paramServiceUrl": "true",
+    "paramNamedValue": "true",
+    "paramApiLoggerId": "true",
+    "paramLogResourceId": "true"
+}
