@@ -7,8 +7,6 @@ name: APIM Dev Contoso Service
 on:
   push:
     branches: [ dev ]
-    paths: 
-    - 'ahmapim/**'
   workflow_dispatch:
     #- '!servless-devops/**/README.md'
 
