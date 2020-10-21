@@ -7,7 +7,7 @@ name: APIM Dev Contoso Service
 on:
   push:
     branches:
-      - dev
+      - main
     paths: 
       -  'ahmsapim/**' 
       -  README.md
@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      resourceGroup: apim-dev-ahmsapim-rg
-      ApimServiceName: apims-dev-ahmsapim
+      resourceGroup: ServerlessOpenHack
+      ApimServiceName: ahmsopenhack
       repoUrl: https://raw.githubusercontent.com/ahmedsza/apimdevops
-      repoBranch: dev
+      repoBranch: main
       repoApimPath: ahmsapim
 
 

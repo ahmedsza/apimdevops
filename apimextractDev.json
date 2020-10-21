@@ -1,0 +1,13 @@
+{
+    "sourceApimName": "apims-dev-ahmsapim",
+    "destinationApimName": "apims-dev-ahmsapim",
+    "resourceGroup": "apim-dev-ahmsapim-rg",
+    "fileFolder": "./ahmsapim",
+    "linkedTemplatesBaseUrl": "https://raw.githubusercontent.com/ahmedsza/apimdevops/dev/apim/ahmsapim",
+    "policyXMLBaseUrl": "https://raw.githubusercontent.com/ahmedsza/apimdevops/dev/apim/ahmsapim/policies",
+    "splitAPIs": "true",
+    "paramServiceUrl": "true",
+    "paramNamedValue": "true",
+    "paramApiLoggerId": "true",
+    "paramLogResourceId": "true"
+}
