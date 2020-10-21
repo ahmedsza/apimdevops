@@ -6,8 +6,8 @@ name: APIM Dev Contoso Service
 # events but only for the master branch
 on:
   push:
-    branches:
-      - dev
+  #  branches:
+  #    - dev
   workflow_dispatch:
     #- '!servless-devops/**/README.md'
 
