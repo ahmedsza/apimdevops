@@ -13,15 +13,7 @@
     },
     "serviceUrl": {
       "value": {
-        "ahmsohfunctionex1": null,
-        "democonferenceapi": "https://conferenceapi.azurewebsites.net",
-        "echoapi": "http://echoapi.cloudapp.net/api",
-        "getproducts": "https://serverlessohproduct.trafficmanager.net/api/GetProducts",
-        "hybridapi": "http://172.22.192.1:8080",
-        "Api5eb2945e1a8e99feee18d730": null,
-        "Api5eb295bc552887024441aced": null,
-        "Api5eb2961d2157923434215b1d": null,
-        "Api5eb295fbc36213ade9f83eb3": null
+        "democonferenceapi": "https://conferenceapi.azurewebsites.net"
       }
     },
     "NamedValues": {
@@ -35,9 +27,7 @@
       "value": {}
     },
     "LoggerResourceId": {
-      "value": {
-        "apimanagement": "/subscriptions/1af37254-fd45-46ce-83b3-98926c1c772b/resourceGroups/ServerlessOpenHack/providers/microsoft.insights/components/apimanagement"
-      }
+      "value": {}
     }
   },
   "resources": []
